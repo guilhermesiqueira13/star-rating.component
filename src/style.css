@@ -1,0 +1,70 @@
+:root {
+  --star-on: invert(74%) sepia(100%) saturate(500%) hue-rotate(1deg)
+    brightness(100%) contrast(100%);
+  --star-off: invert(90%) sepia(10%) saturate(200%) hue-rotate(180deg)
+    brightness(95%) contrast(90%);
+  --bg: #e6e9fb;
+  --white: #ffffff;
+  --title-color: #0f172a;
+  --text-color: #374151;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: "font-title";
+  src: url("../assets/fonts/Merriweather/Merriweather-Bold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "font-paragraph";
+  src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("woff2");
+}
+
+/* write your CSS here */
+body {
+  background-color: var(--bg);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 64px;
+  box-shadow: 10px 10px 4px rgba(255, 255, 255, 0.4);
+}
+
+.container-card h1 {
+  font-family: "font-title";
+  font-size: 1.5rem;
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 32px;
+  cursor: pointer;
+}
+
+.star-rating img {
+  height: 73px;
+  width: 76px;
+  filter: var(--star-off);
+}
