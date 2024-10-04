@@ -1,8 +1,6 @@
 :root {
-  --star-on: invert(74%) sepia(100%) saturate(500%) hue-rotate(1deg)
-    brightness(100%) contrast(100%);
-  --star-off: invert(90%) sepia(10%) saturate(200%) hue-rotate(180deg)
-    brightness(95%) contrast(90%);
+  --star-on: #facc15;
+  --star-off: #e2e8f0;
   --bg: #e6e9fb;
   --white: #ffffff;
   --title-color: #0f172a;
@@ -26,7 +24,7 @@ img {
 }
 
 @font-face {
-  font-family: "font-paragraph";
+  font-family: "font-text";
   src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("woff2");
 }
 
@@ -46,6 +44,8 @@ body {
   background: var(--white);
   border-radius: 16px;
   padding: 64px;
+  max-width: 775px !important;
+  max-height: 394px !important;
   box-shadow: 10px 10px 4px rgba(255, 255, 255, 0.4);
 }
 
@@ -57,14 +57,33 @@ body {
   margin-bottom: 32px;
 }
 
-.star-rating {
+.rating {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 32px;
-  cursor: pointer;
 }
 
-.star-rating img {
-  height: 73px;
-  width: 76px;
-  filter: var(--star-off);
+.rating-star {
+  color: var(--star-off);
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+.rating-star.half::before {
+  color: var(--star-on);
+  width: 100%;
+}
+
+.rating-star.ativo {
+  color: var(--star-on);
+}
+
+.rating-text {
+  font-family: "font-text";
+  font-size: 1.125rem;
+  color: var(--text-color);
+  text-align: center;
 }
